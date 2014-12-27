@@ -212,6 +212,15 @@ function render(resumeObject) {
         }
     }
 
+    if (resumeObject.certificates && resumeObject.certificates.length) {
+        resumeObject.certificatesBool = true;
+        _.each(resumeObject.certificates, function(a){
+          a.year = (a.receiveDate || a.date || "").substr(0,4);
+          a.day = (a.receiveDate || a.date || "").substr(8,2);
+          a.month = getMonth(a.receiveDate || a.date || "");
+        });
+    }
+
     if (resumeObject.awards && resumeObject.awards.length) {
         if (resumeObject.awards[0].title) {
             resumeObject.awardsBool = true;

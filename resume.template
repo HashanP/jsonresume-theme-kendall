@@ -72,6 +72,30 @@
             </ul>
           </div>
           {{/educationBool}}
+          {{#certificatesBool}}
+          <!-- QUALIFICATIONS -->
+          <div class="box">
+            <h2><i class= "fa fa-certificate ico"></i> Qualifications</h2>
+            {{#certificates}}
+            <div class="job clearfix">
+              <div class="row">
+                <div class="details">
+                  <div class="where">{{name}}</div>
+                  <div class="address">
+                    <i class="fa fa-institution ico"></i> {{institution}}
+                  </div>
+                  {{#website}}
+                  <div class="address">
+                    <a href="{{website}}" target= "_blank"><i class="fa fa-globe ico"></i> {{website}}</a>
+                  </div>
+                  {{/website}}
+                  <div class="year">{{month}} {{year}}</div>
+                </div>
+              </div>
+            </div>
+            {{/certificates}}
+          </div>
+          {{/certificatesBool}}
           {{#workBool}}
           <!-- WORK EXPERIENCE -->
           <div class="box">
@@ -112,7 +136,7 @@
           {{#awardsBool}}
           <!-- AWARDS -->
           <div class="box">
-            <h2><i class="fa fa-certificate ico"></i> Awards</h2>
+            <h2><i class="fa fa-star ico"></i> Awards</h2>
             <ul id="awards" class="clearfix">
               {{#awards}}
               <li>
